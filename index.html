@@ -409,19 +409,23 @@
   </footer>
 
   <script>
-    // Script til årstal og formular-feedback
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('contact-form').addEventListener('submit', e=>{
+  // === Årstal i footer + simpel formular-feedback ===
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       alert('Tak for din henvendelse, Jolanta vender tilbage hurtigst muligt!');
       e.target.reset();
     });
-  <script>
+  }
+
   // ========= Enkel kurv uden backend (gemmes i memory) =========
-  const cart = []; // { id, name, price, qty }
+  const cart = []; // { id, name, price, qty, img }
 
   function formatDKK(n) {
-    return `${n.toLocaleString('da-DK')} kr.`;
+    return `${n.toLocaleString('da-DK')} kr.`; // <— backticks er vigtige
   }
 
   function findItem(id) {
@@ -467,13 +471,16 @@
 
   function renderCart() {
     const count = cart.reduce((s, i) => s + i.qty, 0);
-    document.getElementById('cart-count').textContent = count;
+    const countEl = document.getElementById('cart-count');
+    if (countEl) countEl.textContent = count;
 
     const empty = document.getElementById('cart-empty');
     const filled = document.getElementById('cart-filled');
     const rows = document.getElementById('cart-rows');
     const totalEl = document.getElementById('cart-total');
     const mailto = document.getElementById('cart-mailto');
+
+    if (!empty || !filled) return; // hvis kurv-afsnit ikke findes endnu
 
     if (count === 0) {
       empty.classList.remove('hidden');
@@ -484,9 +491,9 @@
       filled.classList.remove('hidden');
     }
 
-    // Rows
     rows.innerHTML = '';
     let total = 0;
+
     cart.forEach(item => {
       total += item.price * item.qty;
       const tr = document.createElement('tr');
@@ -512,26 +519,36 @@
       rows.appendChild(tr);
     });
 
-    totalEl.textContent = formatDKK(total);
+    if (totalEl) totalEl.textContent = formatDKK(total);
 
-    // Byg mailto-ordre
-    const lines = cart.map(i => `• ${i.name} × ${i.qty} = ${formatDKK(i.price * i.qty)}`).join('%0A');
-    const body = `Hej Jolanta%0A%0AJeg vil gerne forespørge på følgende:%0A${lines}%0A%0ATotal: ${formatDKK(total)}%0A%0AMvh,%0A[Dit navn]`;
-    mailto.href = `mailto:jolanta.keramik@mail.com?subject=Forespørgsel%20på%20keramik&body=${body}`;
+    // Byg mailto indhold
+    if (mailto) {
+      const lines = cart
+        .map(i => `• ${i.name} × ${i.qty} = ${formatDKK(i.price * i.qty)}`)
+        .join('%0A');
+      const body =
+        `Hej Jolanta%0A%0A` +
+        `Jeg vil gerne forespørge på følgende:%0A` +
+        `${lines}%0A%0A` +
+        `Total: ${formatDKK(total)}%0A%0A` +
+        `Mvh,%0A[Dit navn]`;
+
+      mailto.href = `mailto:jolanta.keramik@mail.com?subject=Forespørgsel%20på%20keramik&body=${body}`;
+    }
   }
 
-  // Lille toast-besked
   function toast(text) {
     const box = document.createElement('div');
     box.className = 'fixed left-1/2 -translate-x-1/2 bottom-6 z-50 px-4 py-2 rounded-lg bg-black text-white shadow-lg';
     box.textContent = text;
     document.body.appendChild(box);
-    setTimeout(() => { box.remove(); }, 2000);
+    setTimeout(() => box.remove(), 2000);
   }
 
-  // Init (tom kurv ved load)
+  // Init
   renderCart();
 </script>
+
 
 </body>
 </html>
