@@ -335,58 +335,107 @@
         </article>
 
       
-  <!-- ========================================= -->
-  <!--  AFSNIT 6: INDKØBSKURV                   -->
-  <!-- ========================================= -->
-  <section id="kurv" class="py-16 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-3xl font-extrabold header-font mb-6 text-center">Din Kurv</h2>
+ <!-- ========================================= -->
+<!--  AFSNIT 6: KURV + KONTAKT (2-kolonne)     -->
+<!-- ========================================= -->
+<section id="kurv" class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-      <!-- Tom kurv besked -->
-      <div id="cart-empty" class="p-6 bg-white rounded-lg shadow text-gray-600 text-center">
-        Din kurv er tom. Læg produkter i kurven fra kollektionen ovenfor.
-      </div>
+      <!-- ====== Venstre: Din Kurv ====== -->
+      <div>
+        <h2 class="text-3xl font-extrabold header-font mb-6">Din Kurv</h2>
 
-      <!-- Fyldt kurv -->
-      <div id="cart-filled" class="hidden bg-white rounded-lg shadow overflow-hidden mt-6">
-        <div class="overflow-x-auto">
-          <table class="min-w-full divide-y divide-gray-200">
-            <thead class="bg-gray-100">
-              <tr>
-                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">Vare</th>
-                <th class="px-4 py-3 text-center text-sm font-semibold text-gray-700">Antal</th>
-                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-700">Pris</th>
-                <th class="px-4 py-3"></th>
-              </tr>
-            </thead>
-            <tbody id="cart-rows" class="divide-y divide-gray-200"></tbody>
-          </table>
+        <!-- Tom kurv besked -->
+        <div id="cart-empty" class="p-6 bg-white rounded-lg shadow text-gray-600">
+          Din kurv er tom. Læg produkter i kurven fra kollektionen ovenfor.
         </div>
 
-        <!-- Total + knapper -->
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 px-4 py-4">
-          <div class="text-lg">
-            Total: <span id="cart-total" class="font-bold">0 kr.</span>
+        <!-- Fyldt kurv -->
+        <div id="cart-filled" class="hidden bg-white rounded-lg shadow overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-100">
+                <tr>
+                  <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">Vare</th>
+                  <th class="px-4 py-3 text-center text-sm font-semibold text-gray-700">Antal</th>
+                  <th class="px-4 py-3 text-right text-sm font-semibold text-gray-700">Pris</th>
+                  <th class="px-4 py-3"></th>
+                </tr>
+              </thead>
+              <tbody id="cart-rows" class="divide-y divide-gray-200"></tbody>
+            </table>
           </div>
-          <div class="flex items-center gap-3">
-            <a id="cart-mailto" href="#" class="px-5 py-2 rounded-md bg-[var(--color-sage)] text-black font-semibold hover:bg-black hover:text-white transition">
-              Send Forespørgsel
+
+          <!-- Total + actions -->
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 px-4 py-4">
+            <div class="text-lg">
+              Total: <span id="cart-total" class="font-bold">0 kr.</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <a id="cart-mailto" href="#"
+                 class="px-5 py-2 rounded-md bg-[var(--color-sage)] text-black font-semibold hover:bg-black hover:text-white transition">
+                Send Forespørgsel
+              </a>
+              <button onclick="clearCart()"
+                      class="px-5 py-2 rounded-md bg-gray-200 text-gray-800 font-semibold hover:bg-gray-300 transition">
+                Tøm Kurv
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====== Højre: Kontakt Jolanta ====== -->
+      <div id="kontakt">
+        <div class="bg-[var(--color-anthracite)] text-white rounded-xl shadow p-6 sm:p-8">
+          <h2 class="text-3xl font-extrabold header-font mb-2">Kontakt Jolanta</h2>
+          <p class="text-gray-300 mb-6">
+            Send en forespørgsel om et specifikt stykke eller en specialbestilling.
+          </p>
+
+          <p class="mb-4">
+            <span class="text-gray-400">E-mail:</span>
+            <a href="mailto:jolanta.keramik@mail.com" class="underline hover:text-[var(--color-sage)]">
+              jolanta.keramik@mail.com
             </a>
-            <button onclick="clearCart()" class="px-5 py-2 rounded-md bg-gray-200 text-gray-800 font-semibold hover:bg-gray-300 transition">
-              Tøm Kurv
+          </p>
+
+          <form id="contact-form" class="grid grid-cols-1 gap-4">
+            <div>
+              <label for="name" class="block text-sm text-gray-300 mb-1">Navn</label>
+              <input id="name" name="name" type="text" required
+                     class="w-full rounded-md bg-[#0f0f10] border border-gray-700 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[var(--color-sage)]">
+            </div>
+            <div>
+              <label for="email" class="block text-sm text-gray-300 mb-1">E-mail</label>
+              <input id="email" name="email" type="email" required
+                     class="w-full rounded-md bg-[#0f0f10] border border-gray-700 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[var(--color-sage)]">
+            </div>
+            <div>
+              <label for="message" class="block text-sm text-gray-300 mb-1">Besked</label>
+              <textarea id="message" name="message" rows="4" required
+                        class="w-full rounded-md bg-[#0f0f10] border border-gray-700 px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[var(--color-sage)]"></textarea>
+            </div>
+            <button type="submit"
+                    class="mt-2 inline-flex justify-center px-6 py-2 rounded-md bg-[var(--color-sage)] text-black font-semibold hover:bg-white transition">
+              Send
             </button>
-          </div>
+          </form>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Flydende kurv-knap -->
-  <a href="#kurv" class="fixed right-4 bottom-4 z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white shadow-lg hover:bg-[var(--color-sage)] hover:text-black transition">
-    <span>🛒</span>
-    <span>Kurv</span>
-    <span id="cart-count" class="ml-1 inline-flex items-center justify-center text-sm font-bold bg-white text-black rounded-full w-6 h-6">0</span>
-  </a>
+    </div>
+  </div>
+</section>
+
+<!-- Flydende kurv-knap (behold) -->
+<a href="#kurv"
+   class="fixed right-4 bottom-4 z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white shadow-lg hover:bg-[var(--color-sage)] hover:text-black transition">
+  <span>🛒</span>
+  <span>Kurv</span>
+  <span id="cart-count" class="ml-1 inline-flex items-center justify-center text-sm font-bold bg-white text-black rounded-full w-6 h-6">0</span>
+</a>
 
 <!-- ========================================= -->
 <!--  AFSNIT 7: KONTAKT + FOOTER               -->
