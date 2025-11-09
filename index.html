@@ -408,26 +408,75 @@
     &copy; <span id="year"></span> Jolanta Keramik – Alle rettigheder forbeholdt.
   </footer>
 
-  <script>
-  // === Årstal i footer + simpel formular-feedback ===
-  document.getElementById('year').textContent = new Date().getFullYear();
+<script>
+  /* ====================================================
+   *  FÆLLES SCRIPT – FOOTER, FORM & INDKØBSKURV
+   *  - Årstal i footer
+   *  - Simpel formular-feedback
+   *  - Kurv med localStorage (overlever refresh)
+   *  - Mailto-forespørgsel ud fra indholdet i kurven
+   * ==================================================== */
 
+  // -------- Footer-årstal --------
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // -------- Formular-feedback (hvis formular findes) --------
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      alert('Tak for din henvendelse, Jolanta vender tilbage hurtigst muligt!');
+      alert('Tak for din henvendelse! Jolanta vender tilbage hurtigst muligt.');
       e.target.reset();
     });
   }
 
-  // ========= Enkel kurv uden backend (gemmes i memory) =========
-  const cart = []; // { id, name, price, qty, img }
+  // ============ Indkøbskurv (med localStorage) ============
+  const CART_KEY = 'jolantaCart_v1';
+  const cart = []; // elementer: { id, name, price, qty, img }
+  let saveTimer = null;
 
   function formatDKK(n) {
-    return `${n.toLocaleString('da-DK')} kr.`; // <— backticks er vigtige
+    return `${n.toLocaleString('da-DK')} kr.`;
   }
 
+  // --- Storage helpers (med lille debounce for færre skrivninger) ---
+  function saveCart() {
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => {
+      try {
+        localStorage.setItem(CART_KEY, JSON.stringify(cart));
+      } catch (err) {
+        console.warn('Kunne ikke gemme kurv:', err);
+      }
+    }, 150);
+  }
+
+  function loadCart() {
+    try {
+      const raw = localStorage.getItem(CART_KEY);
+      if (!raw) return;
+      const data = JSON.parse(raw);
+      if (Array.isArray(data)) {
+        cart.length = 0;
+        data.forEach(i => {
+          if (i && i.id && i.name && typeof i.price === 'number') {
+            cart.push({
+              id: String(i.id),
+              name: String(i.name),
+              price: Number(i.price),
+              qty: Math.max(1, Number(i.qty || 1)),
+              img: i.img || ''
+            });
+          }
+        });
+      }
+    } catch (err) {
+      console.warn('Kunne ikke indlæse kurv:', err);
+    }
+  }
+
+  // --- Kurv logik ---
   function findItem(id) {
     return cart.find(i => i.id === id);
   }
@@ -446,7 +495,7 @@
     item.qty -= 1;
     if (item.qty <= 0) {
       const idx = cart.findIndex(i => i.id === id);
-      cart.splice(idx, 1);
+      if (idx >= 0) cart.splice(idx, 1);
     }
     renderCart();
   }
@@ -469,10 +518,15 @@
     renderCart();
   }
 
+  // --- Visning & mailto ---
   function renderCart() {
+    // Opdater badges (både flydende og evt. i topmenu)
     const count = cart.reduce((s, i) => s + i.qty, 0);
-    const countEl = document.getElementById('cart-count');
-    if (countEl) countEl.textContent = count;
+    const badgeIds = ['cart-count', 'cart-count-header'];
+    badgeIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = count;
+    });
 
     const empty = document.getElementById('cart-empty');
     const filled = document.getElementById('cart-filled');
@@ -480,11 +534,16 @@
     const totalEl = document.getElementById('cart-total');
     const mailto = document.getElementById('cart-mailto');
 
-    if (!empty || !filled) return; // hvis kurv-afsnit ikke findes endnu
+    // Hvis kurv-sektionen ikke findes på siden, gem kun til storage
+    if (!empty || !filled) {
+      saveCart();
+      return;
+    }
 
     if (count === 0) {
       empty.classList.remove('hidden');
       filled.classList.add('hidden');
+      saveCart();
       return;
     } else {
       empty.classList.add('hidden');
@@ -521,7 +580,7 @@
 
     if (totalEl) totalEl.textContent = formatDKK(total);
 
-    // Byg mailto indhold
+    // Byg mailto-link med ordrelinjer
     if (mailto) {
       const lines = cart
         .map(i => `• ${i.name} × ${i.qty} = ${formatDKK(i.price * i.qty)}`)
@@ -531,23 +590,29 @@
         `Jeg vil gerne forespørge på følgende:%0A` +
         `${lines}%0A%0A` +
         `Total: ${formatDKK(total)}%0A%0A` +
-        `Mvh,%0A[Dit navn]`;
+        `Mvh,%0A[Dit navn]%0A[Telefon]`;
 
       mailto.href = `mailto:jolanta.keramik@mail.com?subject=Forespørgsel%20på%20keramik&body=${body}`;
     }
+
+    // Gem til storage
+    saveCart();
   }
 
+  // --- Lille toast-besked nederst på skærmen ---
   function toast(text) {
     const box = document.createElement('div');
     box.className = 'fixed left-1/2 -translate-x-1/2 bottom-6 z-50 px-4 py-2 rounded-lg bg-black text-white shadow-lg';
     box.textContent = text;
     document.body.appendChild(box);
-    setTimeout(() => box.remove(), 2000);
+    setTimeout(() => box.remove(), 1800);
   }
 
-  // Init
+  // Init: indlæs fra storage og tegn
+  loadCart();
   renderCart();
 </script>
+
 
 
 </body>
