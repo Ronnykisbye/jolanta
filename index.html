@@ -163,92 +163,146 @@
 
 
 
-  <!-- ========================================= -->
-  <!--  AFSNIT 5: PRODUKTER (GALLERI)            -->
-  <!-- ========================================= -->
-  <section id="produkter" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <h2 class="text-4xl font-extrabold header-font mb-4">Kollektionen</h2>
-      <p class="text-lg text-gray-600 mb-12">Et udvalg af Jolantas håndlavede favoritter.</p>
+<!-- ========================================= -->
+<!--  AFSNIT 5: PRODUKTER (GALLERI)            -->
+<!--  Formål: Vise alle produktbilleder som    -->
+<!--  kort i et responsivt 3-kolonne grid.     -->
+<!--  NOTE: Filnavne med mellemrum/æøå er      -->
+<!--  URL-kodet i src-attributten.             -->
+<!-- ========================================= -->
+<section id="produkter" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-4xl font-extrabold header-font mb-4">Kollektionen</h2>
+    <p class="text-lg text-gray-600 mb-12">
+      Et udvalg af Jolantas håndlavede keramik – skåle, kopper, fade, kander og skulpturelle vaser.
+    </p>
 
-      <!-- Produkt-grid -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- GRID: ændr sm:grid-cols-2 / lg:grid-cols-3 hvis du vil have færre/flere pr. række -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
-        <!-- START: Produktkort (brug af dine uploads) -->
-<!-- OBS: Filnavne med mellemrum/æøå er URL-kodet i src -->
-<!-- Du kan altid omdøbe filerne i repoet til simple navne, så src bliver kortere. -->
+      <!-- Skål -->
+      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+        <img src="sk%C3%A5l.jpg" alt="Håndlavet skål med grøn drypglasur" class="h-64 w-full object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-bold header-font mb-2">Skål med drypglasur</h3>
+          <p class="text-gray-600 mb-3 text-sm">Elegant hånddrejet skål – smuk til servering og som dekoration.</p>
+          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil unikt stykke →</a>
+        </div>
+      </div>
 
-<!-- Skål -->
-<div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
-  <img src="sk%C3%A5l.jpg" alt="Håndlavet skål med grøn drypglasur" class="h-64 w-full object-cover">
-  <div class="p-6">
-    <h3 class="text-xl font-bold header-font mb-2">Skål med drypglasur</h3>
-    <p class="text-gray-600 mb-3 text-sm">Elegant hånddrejet skål – smuk til servering og som dekoration.</p>
-    <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil unikt stykke →</a>
+      <!-- Kop -->
+      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+        <img src="kop.jpg" alt="Lille kop med grønne pletter" class="h-64 w-full object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-bold header-font mb-2">Kop med mønster</h3>
+          <p class="text-gray-600 mb-3 text-sm">Hånddrejet kop med karakter og levende farvetoner.</p>
+          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil unikt stykke →</a>
+        </div>
+      </div>
+
+      <!-- To dampende kaffekopper -->
+      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+        <img src="To%20dampende%20kaffekopper.png" alt="To dampende kaffekopper i grøn glasur" class="h-64 w-full object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-bold header-font mb-2">To dampende kaffekopper</h3>
+          <p class="text-gray-600 mb-3 text-sm">Varme stunder – hånddrejede kopper i rolig salviegrøn.</p>
+          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil som sæt →</a>
+        </div>
+      </div>
+
+      <!-- Kande -->
+      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+        <img src="kande.png" alt="Kande med naturglasur" class="h-64 w-full object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-bold header-font mb-2">Kande</h3>
+          <p class="text-gray-600 mb-3 text-sm">Funktionelt kunstværk – perfekt til vand, saft eller blomster.</p>
+          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil kanden →</a>
+        </div>
+      </div>
+
+      <!-- Tallerkener i salviegrøn -->
+      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+        <img src="tallerkener%20i%20salviegr%C3%B8n.png" alt="Tallerkener i salviegrøn" class="h-64 w-full object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-bold header-font mb-2">Tallerkener i salviegrøn</h3>
+          <p class="text-gray-600 mb-3 text-sm">Rolige farver til hverdagen – kan bestilles som sæt.</p>
+          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil tallerkensæt →</a>
+        </div>
+      </div>
+
+      <!-- Stak af skåle -->
+      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+        <img src="stak%20af%20sk%C3%A5le.png" alt="Stak af håndlavede skåle" class="h-64 w-full object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-bold header-font mb-2">Stak af skåle</h3>
+          <p class="text-gray-600 mb-3 text-sm">Små variationer – stor charme. Mix & match din egen stak.</p>
+          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil skåle →</a>
+        </div>
+      </div>
+
+      <!-- Udvalg -->
+      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+        <img src="udvalg.png" alt="Udvalg af Jolantas keramik" class="h-64 w-full object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-bold header-font mb-2">Udvalg af keramik</h3>
+          <p class="text-gray-600 mb-3 text-sm">Et udsnit af kopper, fade og vaser i afdæmpede farver.</p>
+          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Forespørg på specialbestilling →</a>
+        </div>
+      </div>
+
+      <!-- Organisk skulpturvase -->
+      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+        <img src="Organisk%20skulpturvase.png" alt="Organisk skulpturvase i stentøj" class="h-64 w-full object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-bold header-font mb-2">Organisk skulpturvase</h3>
+          <p class="text-gray-600 mb-3 text-sm">Skulpturel form med taktil overflade – blikfang i stuen.</p>
+          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil vasen →</a>
+        </div>
+      </div>
+
+      <!-- Stort, rundt keramikfad -->
+      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+        <img src="Et%20stort%2C%20rundt%20keramikfad.png" alt="Stort, rundt keramikfad" class="h-64 w-full object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-bold header-font mb-2">Stort, rundt keramikfad</h3>
+          <p class="text-gray-600 mb-3 text-sm">Serveringsfad med blødt formsprog og rolig glasur.</p>
+          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil fadet →</a>
+        </div>
+      </div>
+
+      <!-- Aflangt tapasfad -->
+      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+        <img src="Aflangt%20tapasfad.png" alt="Aflangt tapasfad" class="h-64 w-full object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-bold header-font mb-2">Aflangt tapasfad</h3>
+          <p class="text-gray-600 mb-3 text-sm">Perfekt til tapas, snacks og små serveringer.</p>
+          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil tapasfad →</a>
+        </div>
+      </div>
+
+      <!-- Aflangt tapasfad i sand -->
+      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+        <img src="Aflangt%20tapasfad%20i%20sand.png" alt="Aflangt tapasfad i sandfarvet glasur" class="h-64 w-full object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-bold header-font mb-2">Aflangt tapasfad (sand)</h3>
+          <p class="text-gray-600 mb-3 text-sm">Sandfarvet variation med varm, naturlig tone.</p>
+          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil variationen →</a>
+        </div>
+      </div>
+
+      <!-- Stor, dyb, salviegrøn frugtskål -->
+      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+        <img src="Stor%2C%20dyb%2C%20salviegr%C3%B8n%20frugtsk%C3%A5l.png" alt="Stor, dyb frugtskål i salviegrøn" class="h-64 w-full object-cover">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-bold header-font mb-2">Stor, dyb frugtskål (salviegrøn)</h3>
+          <p class="text-gray-600 mb-3 text-sm">Statement-skål på bordet – rummelig og harmonisk farve.</p>
+          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil frugtskål →</a>
+        </div>
+      </div>
+
+    </div>
   </div>
-</div>
-
-<!-- Kop -->
-<div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
-  <img src="kop.jpg" alt="Lille kop med grønne pletter" class="h-64 w-full object-cover">
-  <div class="p-6">
-    <h3 class="text-xl font-bold header-font mb-2">Kop med mønster</h3>
-    <p class="text-gray-600 mb-3 text-sm">Hånddrejet kop med karakter og levende farvetoner.</p>
-    <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil unikt stykke →</a>
-  </div>
-</div>
-
-<!-- To dampende kaffekopper -->
-<div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
-  <img src="To%20dampende%20kaffekopper.png" alt="To dampende kaffekopper i grøn glasur" class="h-64 w-full object-cover">
-  <div class="p-6">
-    <h3 class="text-xl font-bold header-font mb-2">To dampende kaffekopper</h3>
-    <p class="text-gray-600 mb-3 text-sm">Varme stunder – hånddrejede kopper i rolig grøn glasur.</p>
-    <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil som sæt →</a>
-  </div>
-</div>
-
-<!-- Kande -->
-<div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
-  <img src="kande.png" alt="Kande med naturglasur" class="h-64 w-full object-cover">
-  <div class="p-6">
-    <h3 class="text-xl font-bold header-font mb-2">Kande</h3>
-    <p class="text-gray-600 mb-3 text-sm">Funktionelt kunstværk – perfekt til vand, saft eller blomster.</p>
-    <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil kanden →</a>
-  </div>
-</div>
-
-<!-- Tallerkener i salviegrøn -->
-<div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
-  <img src="tallerkener%20i%20salviegr%C3%B8n.png" alt="Tallerkener i salviegrøn" class="h-64 w-full object-cover">
-  <div class="p-6">
-    <h3 class="text-xl font-bold header-font mb-2">Tallerkener i salviegrøn</h3>
-    <p class="text-gray-600 mb-3 text-sm">Rolige farver til hverdagen – kan bestilles som sæt.</p>
-    <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil tallerkensæt →</a>
-  </div>
-</div>
-
-<!-- Stak af skåle -->
-<div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
-  <img src="stak%20af%20sk%C3%A5le.png" alt="Stak af håndlavede skåle" class="h-64 w-full object-cover">
-  <div class="p-6">
-    <h3 class="text-xl font-bold header-font mb-2">Stak af skåle</h3>
-    <p class="text-gray-600 mb-3 text-sm">Små variationer – stor charme. Mix & match din egen stak.</p>
-    <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil skåle →</a>
-  </div>
-</div>
-
-<!-- Udvalg af keramik -->
-<div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
-  <img src="udvalg.png" alt="Udvalg af Jolantas keramik" class="h-64 w-full object-cover">
-  <div class="p-6">
-    <h3 class="text-xl font-bold header-font mb-2">Udvalg af keramik</h3>
-    <p class="text-gray-600 mb-3 text-sm">Et udsnit af Jolantas kopper, fade og vaser i afdæmpede farver.</p>
-    <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Forespørg på special-bestilling →</a>
-  </div>
-</div>
-<!-- SLUT: Produktkort -->
-
+</section>
 
 
   <!-- ========================================= -->
