@@ -164,11 +164,7 @@
 
 
 <!-- ========================================= -->
-<!--  AFSNIT 5: PRODUKTER (GALLERI)            -->
-<!--  Formål: Vise alle produktbilleder som    -->
-<!--  kort i et responsivt 3-kolonne grid.     -->
-<!--  NOTE: Filnavne med mellemrum/æøå er      -->
-<!--  URL-kodet i src-attributten.             -->
+<!--  AFSNIT 5: PRODUKTER (GALLERI + PRISER)  -->
 <!-- ========================================= -->
 <section id="produkter" class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 text-center">
@@ -177,161 +173,233 @@
       Et udvalg af Jolantas håndlavede keramik – skåle, kopper, fade, kander og skulpturelle vaser.
     </p>
 
-    <!-- GRID: ændr sm:grid-cols-2 / lg:grid-cols-3 hvis du vil have færre/flere pr. række -->
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
-      <!-- Skål -->
-      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+      <!-- Skål med drypglasur -->
+      <article class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
         <img src="sk%C3%A5l.jpg" alt="Håndlavet skål med grøn drypglasur" class="h-64 w-full object-cover">
         <div class="p-6 text-left">
-          <h3 class="text-xl font-bold header-font mb-2">Skål med drypglasur</h3>
-          <p class="text-gray-600 mb-3 text-sm">Elegant hånddrejet skål – smuk til servering og som dekoration.</p>
-          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil unikt stykke →</a>
+          <h3 class="text-xl font-bold header-font mb-1">Skål Med Drypglasur</h3>
+          <p class="text-sm text-gray-600 mb-3">Elegant hånddrejet skål – smuk til servering og som dekoration.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">450 kr.</span>
+            <button class="px-4 py-2 rounded-md bg-sage text-black font-semibold hover:bg-black hover:text-white transition"
+              onclick="addToCart('skal-dryp','Skål Med Drypglasur',450,'sk%C3%A5l.jpg')">Læg i kurv</button>
+          </div>
         </div>
-      </div>
+      </article>
 
-      <!-- Kop -->
-      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+      <!-- Kop med mønster -->
+      <article class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
         <img src="kop.jpg" alt="Lille kop med grønne pletter" class="h-64 w-full object-cover">
         <div class="p-6 text-left">
-          <h3 class="text-xl font-bold header-font mb-2">Kop med mønster</h3>
-          <p class="text-gray-600 mb-3 text-sm">Hånddrejet kop med karakter og levende farvetoner.</p>
-          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil unikt stykke →</a>
+          <h3 class="text-xl font-bold header-font mb-1">Kop Med Mønster</h3>
+          <p class="text-sm text-gray-600 mb-3">Hånddrejet kop med karakter og levende farvetoner.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">250 kr.</span>
+            <button class="px-4 py-2 rounded-md bg-sage text-black font-semibold hover:bg-black hover:text-white transition"
+              onclick="addToCart('kop-monster','Kop Med Mønster',250,'kop.jpg')">Læg i kurv</button>
+          </div>
         </div>
-      </div>
+      </article>
 
       <!-- To dampende kaffekopper -->
-      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+      <article class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
         <img src="To%20dampende%20kaffekopper.png" alt="To dampende kaffekopper i grøn glasur" class="h-64 w-full object-cover">
         <div class="p-6 text-left">
-          <h3 class="text-xl font-bold header-font mb-2">To dampende kaffekopper</h3>
-          <p class="text-gray-600 mb-3 text-sm">Varme stunder – hånddrejede kopper i rolig salviegrøn.</p>
-          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil som sæt →</a>
+          <h3 class="text-xl font-bold header-font mb-1">To Dampende Kaffekopper</h3>
+          <p class="text-sm text-gray-600 mb-3">Varme stunder – hånddrejede kopper i rolig salviegrøn.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">475 kr.</span>
+            <button class="px-4 py-2 rounded-md bg-sage text-black font-semibold hover:bg-black hover:text-white transition"
+              onclick="addToCart('kaffekopper-saet','To Dampende Kaffekopper',475,'To%20dampende%20kaffekopper.png')">Læg i kurv</button>
+          </div>
         </div>
-      </div>
+      </article>
 
       <!-- Kande -->
-      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+      <article class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
         <img src="kande.png" alt="Kande med naturglasur" class="h-64 w-full object-cover">
         <div class="p-6 text-left">
-          <h3 class="text-xl font-bold header-font mb-2">Kande</h3>
-          <p class="text-gray-600 mb-3 text-sm">Funktionelt kunstværk – perfekt til vand, saft eller blomster.</p>
-          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil kanden →</a>
+          <h3 class="text-xl font-bold header-font mb-1">Kande</h3>
+          <p class="text-sm text-gray-600 mb-3">Funktionelt kunstværk – perfekt til vand, saft eller blomster.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">650 kr.</span>
+            <button class="px-4 py-2 rounded-md bg-sage text-black font-semibold hover:bg-black hover:text-white transition"
+              onclick="addToCart('kande','Kande',650,'kande.png')">Læg i kurv</button>
+          </div>
         </div>
-      </div>
+      </article>
 
-      <!-- Tallerkener i salviegrøn -->
-      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+      <!-- Tallerkener i salviegrøn (2 stk.) -->
+      <article class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
         <img src="tallerkener%20i%20salviegr%C3%B8n.png" alt="Tallerkener i salviegrøn" class="h-64 w-full object-cover">
         <div class="p-6 text-left">
-          <h3 class="text-xl font-bold header-font mb-2">Tallerkener i salviegrøn</h3>
-          <p class="text-gray-600 mb-3 text-sm">Rolige farver til hverdagen – kan bestilles som sæt.</p>
-          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil tallerkensæt →</a>
+          <h3 class="text-xl font-bold header-font mb-1">Tallerkener I Salviegrøn (2 Stk.)</h3>
+          <p class="text-sm text-gray-600 mb-3">Rolige farver til hverdagen – kan udvides som sæt.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">500 kr.</span>
+            <button class="px-4 py-2 rounded-md bg-sage text-black font-semibold hover:bg-black hover:text-white transition"
+              onclick="addToCart('tallerkener-salvie-2','Tallerkener I Salviegrøn (2 Stk.)',500,'tallerkener%20i%20salviegr%C3%B8n.png')">Læg i kurv</button>
+          </div>
         </div>
-      </div>
+      </article>
 
-      <!-- Stak af skåle -->
-      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+      <!-- Stak af skåle (3 stk.) -->
+      <article class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
         <img src="stak%20af%20sk%C3%A5le.png" alt="Stak af håndlavede skåle" class="h-64 w-full object-cover">
         <div class="p-6 text-left">
-          <h3 class="text-xl font-bold header-font mb-2">Stak af skåle</h3>
-          <p class="text-gray-600 mb-3 text-sm">Små variationer – stor charme. Mix & match din egen stak.</p>
-          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil skåle →</a>
+          <h3 class="text-xl font-bold header-font mb-1">Stak Af Skåle (3 Stk.)</h3>
+          <p class="text-sm text-gray-600 mb-3">Små variationer – stor charme. Mix & match din egen stak.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">600 kr.</span>
+            <button class="px-4 py-2 rounded-md bg-sage text-black font-semibold hover:bg-black hover:text-white transition"
+              onclick="addToCart('stak-skale-3','Stak Af Skåle (3 Stk.)',600,'stak%20af%20sk%C3%A5le.png')">Læg i kurv</button>
+          </div>
         </div>
-      </div>
+      </article>
 
-      <!-- Udvalg -->
-      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+      <!-- Udvalg af keramik -->
+      <article class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
         <img src="udvalg.png" alt="Udvalg af Jolantas keramik" class="h-64 w-full object-cover">
         <div class="p-6 text-left">
-          <h3 class="text-xl font-bold header-font mb-2">Udvalg af keramik</h3>
-          <p class="text-gray-600 mb-3 text-sm">Et udsnit af kopper, fade og vaser i afdæmpede farver.</p>
-          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Forespørg på specialbestilling →</a>
+          <h3 class="text-xl font-bold header-font mb-1">Udvalg Af Keramik</h3>
+          <p class="text-sm text-gray-600 mb-3">Et blandet sortiment – kontakt for specifikke ønsker.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">Fra 800 kr.</span>
+            <button class="px-4 py-2 rounded-md bg-sage text-black font-semibold hover:bg-black hover:text-white transition"
+              onclick="addToCart('udvalg','Udvalg Af Keramik',800,'udvalg.png')">Læg i kurv</button>
+          </div>
         </div>
-      </div>
+      </article>
 
       <!-- Organisk skulpturvase -->
-      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+      <article class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
         <img src="Organisk%20skulpturvase.png" alt="Organisk skulpturvase i stentøj" class="h-64 w-full object-cover">
         <div class="p-6 text-left">
-          <h3 class="text-xl font-bold header-font mb-2">Organisk skulpturvase</h3>
-          <p class="text-gray-600 mb-3 text-sm">Skulpturel form med taktil overflade – blikfang i stuen.</p>
-          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil vasen →</a>
+          <h3 class="text-xl font-bold header-font mb-1">Organisk Skulpturvase</h3>
+          <p class="text-sm text-gray-600 mb-3">Skulpturel form med taktil overflade – blikfang i stuen.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">950 kr.</span>
+            <button class="px-4 py-2 rounded-md bg-sage text-black font-semibold hover:bg-black hover:text-white transition"
+              onclick="addToCart('skulpturvase','Organisk Skulpturvase',950,'Organisk%20skulpturvase.png')">Læg i kurv</button>
+          </div>
         </div>
-      </div>
+      </article>
 
       <!-- Stort, rundt keramikfad -->
-      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+      <article class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
         <img src="Et%20stort%2C%20rundt%20keramikfad.png" alt="Stort, rundt keramikfad" class="h-64 w-full object-cover">
         <div class="p-6 text-left">
-          <h3 class="text-xl font-bold header-font mb-2">Stort, rundt keramikfad</h3>
-          <p class="text-gray-600 mb-3 text-sm">Serveringsfad med blødt formsprog og rolig glasur.</p>
-          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil fadet →</a>
+          <h3 class="text-xl font-bold header-font mb-1">Stort, Rundt Keramikfad</h3>
+          <p class="text-sm text-gray-600 mb-3">Serveringsfad med blødt formsprog og rolig glasur.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">700 kr.</span>
+            <button class="px-4 py-2 rounded-md bg-sage text-black font-semibold hover:bg-black hover:text-white transition"
+              onclick="addToCart('rundt-fad-stort','Stort, Rundt Keramikfad',700,'Et%20stort%2C%20rundt%20keramikfad.png')">Læg i kurv</button>
+          </div>
         </div>
-      </div>
+      </article>
 
       <!-- Aflangt tapasfad -->
-      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+      <article class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
         <img src="Aflangt%20tapasfad.png" alt="Aflangt tapasfad" class="h-64 w-full object-cover">
         <div class="p-6 text-left">
-          <h3 class="text-xl font-bold header-font mb-2">Aflangt tapasfad</h3>
-          <p class="text-gray-600 mb-3 text-sm">Perfekt til tapas, snacks og små serveringer.</p>
-          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil tapasfad →</a>
+          <h3 class="text-xl font-bold header-font mb-1">Aflangt Tapasfad</h3>
+          <p class="text-sm text-gray-600 mb-3">Perfekt til tapas, snacks og små serveringer.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">400 kr.</span>
+            <button class="px-4 py-2 rounded-md bg-sage text-black font-semibold hover:bg-black hover:text-white transition"
+              onclick="addToCart('tapasfad-klassisk','Aflangt Tapasfad',400,'Aflangt%20tapasfad.png')">Læg i kurv</button>
+          </div>
         </div>
-      </div>
+      </article>
 
-      <!-- Aflangt tapasfad i sand -->
-      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+      <!-- Aflangt tapasfad (sand) -->
+      <article class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
         <img src="Aflangt%20tapasfad%20i%20sand.png" alt="Aflangt tapasfad i sandfarvet glasur" class="h-64 w-full object-cover">
         <div class="p-6 text-left">
-          <h3 class="text-xl font-bold header-font mb-2">Aflangt tapasfad (sand)</h3>
-          <p class="text-gray-600 mb-3 text-sm">Sandfarvet variation med varm, naturlig tone.</p>
-          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil variationen →</a>
+          <h3 class="text-xl font-bold header-font mb-1">Aflangt Tapasfad (Sand)</h3>
+          <p class="text-sm text-gray-600 mb-3">Sandfarvet variation med varm, naturlig tone.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">450 kr.</span>
+            <button class="px-4 py-2 rounded-md bg-sage text-black font-semibold hover:bg-black hover:text-white transition"
+              onclick="addToCart('tapasfad-sand','Aflangt Tapasfad (Sand)',450,'Aflangt%20tapasfad%20i%20sand.png')">Læg i kurv</button>
+          </div>
         </div>
-      </div>
+      </article>
 
-      <!-- Stor, dyb, salviegrøn frugtskål -->
-      <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
+      <!-- Stor, dyb frugtskål (salviegrøn) -->
+      <article class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-100">
         <img src="Stor%2C%20dyb%2C%20salviegr%C3%B8n%20frugtsk%C3%A5l.png" alt="Stor, dyb frugtskål i salviegrøn" class="h-64 w-full object-cover">
         <div class="p-6 text-left">
-          <h3 class="text-xl font-bold header-font mb-2">Stor, dyb frugtskål (salviegrøn)</h3>
-          <p class="text-gray-600 mb-3 text-sm">Statement-skål på bordet – rummelig og harmonisk farve.</p>
-          <a href="#kontakt" class="text-sage hover:text-black text-sm font-medium">Bestil frugtskål →</a>
+          <h3 class="text-xl font-bold header-font mb-1">Stor, Dyb Frugtskål (Salviegrøn)</h3>
+          <p class="text-sm text-gray-600 mb-3">Statement-skål på bordet – rummelig og harmonisk farve.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-lg font-semibold text-gray-900">850 kr.</span>
+            <button class="px-4 py-2 rounded-md bg-sage text-black font-semibold hover:bg-black hover:text-white transition"
+              onclick="addToCart('frugtskal-salvie','Stor, Dyb Frugtskål (Salviegrøn)',850,'Stor%2C%20dyb%2C%20salviegr%C3%B8n%20frugtsk%C3%A5l.png')">Læg i kurv</button>
+          </div>
         </div>
-      </div>
+      </article>
 
     </div>
   </div>
 </section>
 
+ <!-- ========================================= -->
+<!--  AFSNIT 6: INDKØBSKURV                   -->
+<!-- ========================================= -->
+<section id="kurv" class="py-16 bg-gray-50">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="text-3xl font-extrabold header-font mb-6">Din Kurv</h2>
 
-  <!-- ========================================= -->
-  <!--  AFSNIT 6: KONTAKT                        -->
-  <!-- ========================================= -->
-  <section id="kontakt" class="py-20 bg-anthracite text-white">
-    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-start">
+    <!-- Tom kurv besked -->
+    <div id="cart-empty" class="p-6 bg-white rounded-lg shadow text-gray-600">
+      Din kurv er tom. Læg produkter i kurven fra kollektionen ovenfor.
+    </div>
 
-      <!-- Tekst -->
-      <div>
-        <h2 class="text-4xl font-extrabold header-font mb-6">Kontakt Jolanta</h2>
-        <p class="text-lg mb-8 text-gray-300">
-          Ønsker du at bestille et unikt stykke eller høre mere om mulighederne? Send en besked herunder.
-        </p>
-        <a href="mailto:jolanta.keramik@mail.com" class="text-sage hover:underline text-lg font-medium">
-          ✉ jolanta.keramik@mail.com
-        </a>
+    <!-- Kurv tabel -->
+    <div id="cart-filled" class="hidden bg-white rounded-lg shadow overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">Vare</th>
+              <th class="px-4 py-3 text-center text-sm font-semibold text-gray-700">Antal</th>
+              <th class="px-4 py-3 text-right text-sm font-semibold text-gray-700">Pris</th>
+              <th class="px-4 py-3"></th>
+            </tr>
+          </thead>
+          <tbody id="cart-rows" class="divide-y divide-gray-200"></tbody>
+        </table>
       </div>
 
-      <!-- Enkel kontaktformular -->
-      <form id="contact-form" class="space-y-4 bg-gray-900 p-6 rounded-lg shadow-xl">
-        <input type="text" name="name" placeholder="Dit navn" required class="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white">
-        <input type="email" name="email" placeholder="Din e-mail" required class="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white">
-        <textarea name="message" rows="4" placeholder="Din besked..." required class="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white"></textarea>
-        <button type="submit" class="w-full py-3 rounded bg-sage text-anthracite font-bold cta-button">Send besked</button>
-      </form>
-
+      <!-- Total + actions -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 px-4 py-4">
+        <div class="text-lg">
+          Total: <span id="cart-total" class="font-bold">0 kr.</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a id="cart-mailto" href="#" class="px-5 py-2 rounded-md bg-sage text-black font-semibold hover:bg-black hover:text-white transition">
+            Send Forespørgsel
+          </a>
+          <button onclick="clearCart()" class="px-5 py-2 rounded-md bg-gray-200 text-gray-800 font-semibold hover:bg-gray-300 transition">
+            Tøm Kurv
+          </button>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Flydende kurv-knap -->
+<a href="#kurv" class="fixed right-4 bottom-4 z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white shadow-lg hover:bg-sage hover:text-black transition">
+  <span>🛒</span>
+  <span>Kurv</span>
+  <span id="cart-count" class="ml-1 inline-flex items-center justify-center text-sm font-bold bg-white text-black rounded-full w-6 h-6">0</span>
+</a>
+
 
   <!-- ========================================= -->
   <!--  AFSNIT 7: FOOTER                         -->
@@ -348,6 +416,122 @@
       alert('Tak for din henvendelse, Jolanta vender tilbage hurtigst muligt!');
       e.target.reset();
     });
-  </script>
+  <script>
+  // ========= Enkel kurv uden backend (gemmes i memory) =========
+  const cart = []; // { id, name, price, qty }
+
+  function formatDKK(n) {
+    return `${n.toLocaleString('da-DK')} kr.`;
+  }
+
+  function findItem(id) {
+    return cart.find(i => i.id === id);
+  }
+
+  function addToCart(id, name, price, img) {
+    const item = findItem(id);
+    if (item) item.qty += 1;
+    else cart.push({ id, name, price, qty: 1, img });
+    renderCart();
+    toast(`${name} er lagt i kurven`);
+  }
+
+  function removeOne(id) {
+    const item = findItem(id);
+    if (!item) return;
+    item.qty -= 1;
+    if (item.qty <= 0) {
+      const idx = cart.findIndex(i => i.id === id);
+      cart.splice(idx, 1);
+    }
+    renderCart();
+  }
+
+  function addOne(id) {
+    const item = findItem(id);
+    if (!item) return;
+    item.qty += 1;
+    renderCart();
+  }
+
+  function deleteItem(id) {
+    const idx = cart.findIndex(i => i.id === id);
+    if (idx >= 0) cart.splice(idx, 1);
+    renderCart();
+  }
+
+  function clearCart() {
+    cart.length = 0;
+    renderCart();
+  }
+
+  function renderCart() {
+    const count = cart.reduce((s, i) => s + i.qty, 0);
+    document.getElementById('cart-count').textContent = count;
+
+    const empty = document.getElementById('cart-empty');
+    const filled = document.getElementById('cart-filled');
+    const rows = document.getElementById('cart-rows');
+    const totalEl = document.getElementById('cart-total');
+    const mailto = document.getElementById('cart-mailto');
+
+    if (count === 0) {
+      empty.classList.remove('hidden');
+      filled.classList.add('hidden');
+      return;
+    } else {
+      empty.classList.add('hidden');
+      filled.classList.remove('hidden');
+    }
+
+    // Rows
+    rows.innerHTML = '';
+    let total = 0;
+    cart.forEach(item => {
+      total += item.price * item.qty;
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td class="px-4 py-3 text-sm">
+          <div class="flex items-center gap-3">
+            <img src="${item.img}" alt="" class="w-12 h-12 object-cover rounded">
+            <span class="font-medium">${item.name}</span>
+          </div>
+        </td>
+        <td class="px-4 py-3 text-center">
+          <div class="inline-flex items-center gap-2">
+            <button class="px-2 py-1 rounded bg-gray-200 hover:bg-gray-300" onclick="removeOne('${item.id}')">−</button>
+            <span class="w-6 inline-block text-center font-semibold">${item.qty}</span>
+            <button class="px-2 py-1 rounded bg-gray-200 hover:bg-gray-300" onclick="addOne('${item.id}')">+</button>
+          </div>
+        </td>
+        <td class="px-4 py-3 text-right text-sm">${formatDKK(item.price * item.qty)}</td>
+        <td class="px-4 py-3 text-right">
+          <button class="px-3 py-1 rounded bg-red-100 text-red-700 hover:bg-red-200" onclick="deleteItem('${item.id}')">Fjern</button>
+        </td>
+      `;
+      rows.appendChild(tr);
+    });
+
+    totalEl.textContent = formatDKK(total);
+
+    // Byg mailto-ordre
+    const lines = cart.map(i => `• ${i.name} × ${i.qty} = ${formatDKK(i.price * i.qty)}`).join('%0A');
+    const body = `Hej Jolanta%0A%0AJeg vil gerne forespørge på følgende:%0A${lines}%0A%0ATotal: ${formatDKK(total)}%0A%0AMvh,%0A[Dit navn]`;
+    mailto.href = `mailto:jolanta.keramik@mail.com?subject=Forespørgsel%20på%20keramik&body=${body}`;
+  }
+
+  // Lille toast-besked
+  function toast(text) {
+    const box = document.createElement('div');
+    box.className = 'fixed left-1/2 -translate-x-1/2 bottom-6 z-50 px-4 py-2 rounded-lg bg-black text-white shadow-lg';
+    box.textContent = text;
+    document.body.appendChild(box);
+    setTimeout(() => { box.remove(); }, 2000);
+  }
+
+  // Init (tom kurv ved load)
+  renderCart();
+</script>
+
 </body>
 </html>
