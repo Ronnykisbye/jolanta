@@ -327,24 +327,21 @@
           </div>
         </article>
 
-      </div>
-    </div>
-  </section>
-
+      
   <!-- ========================================= -->
   <!--  AFSNIT 6: INDKØBSKURV                   -->
   <!-- ========================================= -->
   <section id="kurv" class="py-16 bg-gray-50">
     <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-3xl font-extrabold header-font mb-6">Din Kurv</h2>
+      <h2 class="text-3xl font-extrabold header-font mb-6 text-center">Din Kurv</h2>
 
-      <!-- Tom kurv -->
-      <div id="cart-empty" class="p-6 bg-white rounded-lg shadow text-gray-600">
+      <!-- Tom kurv besked -->
+      <div id="cart-empty" class="p-6 bg-white rounded-lg shadow text-gray-600 text-center">
         Din kurv er tom. Læg produkter i kurven fra kollektionen ovenfor.
       </div>
 
       <!-- Fyldt kurv -->
-      <div id="cart-filled" class="hidden bg-white rounded-lg shadow overflow-hidden">
+      <div id="cart-filled" class="hidden bg-white rounded-lg shadow overflow-hidden mt-6">
         <div class="overflow-x-auto">
           <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-100">
@@ -359,14 +356,18 @@
           </table>
         </div>
 
-        <!-- Total + handling -->
+        <!-- Total + knapper -->
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 px-4 py-4">
           <div class="text-lg">
             Total: <span id="cart-total" class="font-bold">0 kr.</span>
           </div>
           <div class="flex items-center gap-3">
-            <a id="cart-mailto" href="#" class="px-5 py-2 rounded-md bg-[var(--color-sage)] text-black font-semibold hover:bg-black hover:text-white transition">Send Forespørgsel</a>
-            <button onclick="clearCart()" class="px-5 py-2 rounded-md bg-gray-200 text-gray-800 font-semibold hover:bg-gray-300 transition">Tøm Kurv</button>
+            <a id="cart-mailto" href="#" class="px-5 py-2 rounded-md bg-[var(--color-sage)] text-black font-semibold hover:bg-black hover:text-white transition">
+              Send Forespørgsel
+            </a>
+            <button onclick="clearCart()" class="px-5 py-2 rounded-md bg-gray-200 text-gray-800 font-semibold hover:bg-gray-300 transition">
+              Tøm Kurv
+            </button>
           </div>
         </div>
       </div>
@@ -375,183 +376,170 @@
 
   <!-- Flydende kurv-knap -->
   <a href="#kurv" class="fixed right-4 bottom-4 z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white shadow-lg hover:bg-[var(--color-sage)] hover:text-black transition">
-    <span>🛒</span><span>Kurv</span><span id="cart-count" class="ml-1 inline-flex items-center justify-center text-sm font-bold bg-white text-black rounded-full w-6 h-6">0</span>
+    <span>🛒</span>
+    <span>Kurv</span>
+    <span id="cart-count" class="ml-1 inline-flex items-center justify-center text-sm font-bold bg-white text-black rounded-full w-6 h-6">0</span>
   </a>
 
   <!-- ========================================= -->
-  <!--  AFSNIT 7: KONTAKT                        -->
+  <!--  AFSNIT 7: KONTAKT & FOOTER              -->
   <!-- ========================================= -->
-  <section id="kontakt" class="py-20 bg-white">
-    <div class="max-w-3xl mx-auto px-4">
-      <h2 class="text-3xl font-extrabold header-font mb-6 text-center">Kontakt</h2>
-      <p class="text-gray-600 mb-6 text-center">Skriv en kort besked – vi vender hurtigt tilbage.</p>
-      <form id="contact-form" class="grid gap-4 bg-gray-50 p-6 rounded-xl shadow">
-        <input type="text" name="name" placeholder="Dit navn" required class="p-3 rounded border border-gray-300">
-        <input type="email" name="email" placeholder="Din e-mail" required class="p-3 rounded border border-gray-300">
-        <textarea name="message" rows="4" placeholder="Din besked" required class="p-3 rounded border border-gray-300"></textarea>
-        <button type="submit" class="px-5 py-3 rounded-md bg-[var(--color-sage)] text-black font-semibold hover:bg-black hover:text-white transition">Send besked</button>
+  <section id="kontakt" class="py-20 bg-[var(--color-anthracite)] text-white">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12">
+      <div>
+        <h2 class="text-4xl font-extrabold header-font mb-6">Kontakt Jolanta</h2>
+        <p class="text-lg mb-6 text-gray-300">
+          Send en forespørgsel om et specifikt stykke eller en specialbestilling.
+        </p>
+        <p class="mb-4"><b>E-mail:</b> <a href="mailto:jolanta.keramik@mail.com" class="text-[var(--color-sage)] hover:underline">jolanta.keramik@mail.com</a></p>
+      </div>
+
+      <form id="contact-form" class="space-y-4 bg-gray-900 p-6 rounded-lg shadow-lg">
+        <div>
+          <label for="name" class="block text-sm mb-1">Navn</label>
+          <input id="name" name="name" required class="w-full p-2 rounded bg-gray-800 border border-gray-700 text-white focus:ring-[var(--color-sage)] focus:border-[var(--color-sage)]">
+        </div>
+        <div>
+          <label for="email" class="block text-sm mb-1">E-mail</label>
+          <input id="email" type="email" name="email" required class="w-full p-2 rounded bg-gray-800 border border-gray-700 text-white focus:ring-[var(--color-sage)] focus:border-[var(--color-sage)]">
+        </div>
+        <div>
+          <label for="message" class="block text-sm mb-1">Besked</label>
+          <textarea id="message" name="message" rows="4" required class="w-full p-2 rounded bg-gray-800 border border-gray-700 text-white focus:ring-[var(--color-sage)] focus:border-[var(--color-sage)]"></textarea>
+        </div>
+        <button type="submit" class="w-full py-2 bg-[var(--color-sage)] text-black font-bold rounded hover:bg-white hover:text-black transition">Send</button>
       </form>
     </div>
   </section>
 
-  <!-- ========================================= -->
-  <!--  AFSNIT 8: FOOTER                         -->
-  <!-- ========================================= -->
   <footer class="bg-gray-100 py-6 text-center text-sm text-gray-500">
     &copy; <span id="year"></span> Jolanta Keramik – Alle rettigheder forbeholdt.
   </footer>
 
   <!-- ========================================= -->
-  <!--  AFSNIT 9: SCRIPTS (menu, kurv, formular)  -->
+  <!--  AFSNIT 8: SCRIPT (Kurv + Menu + Form)   -->
   <!-- ========================================= -->
   <script>
-    // --- Årstal ---
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
+    // === Footer årstal ===
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // --- Mobilmenu toggle ---
+    // === Mobilmenu toggle ===
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-    if (menuToggle && mobileMenu){
-      menuToggle.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
-      // Luk mobilmenu ved klik på et link
-      mobileMenu.querySelectorAll('a').forEach(a=>{
-        a.addEventListener('click', ()=> mobileMenu.classList.add('hidden'));
-      });
-    }
+    if (menuToggle) menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-    // --- Kontaktformular (simpel feedback) ---
+    // === Kontaktformular feedback ===
     const contactForm = document.getElementById('contact-form');
-    if (contactForm){
-      contactForm.addEventListener('submit', (e)=>{
-        e.preventDefault();
-        alert('Tak for din henvendelse! Jolanta vender tilbage hurtigst muligt.');
-        contactForm.reset();
-      });
+    if (contactForm) contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Tak for din besked! Jolanta vender tilbage hurtigst muligt.');
+      contactForm.reset();
+    });
+
+    // === Indkøbskurv ===
+    const CART_KEY = 'jolantaCart_v2';
+    let cart = [];
+
+    function loadCart() {
+      try {
+        const saved = localStorage.getItem(CART_KEY);
+        cart = saved ? JSON.parse(saved) : [];
+      } catch { cart = []; }
+    }
+    function saveCart() {
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
     }
 
-    // ============ Indkøbskurv med localStorage ============
-    const CART_KEY = 'jolantaCart_v1';
-    const cart = []; // { id, name, price, qty, img }
-    let saveTimer = null;
+    function formatDKK(n) { return n.toLocaleString('da-DK') + ' kr.'; }
 
-    function formatDKK(n){ return `${n.toLocaleString('da-DK')} kr.`; }
-
-    function saveCart(){
-      clearTimeout(saveTimer);
-      saveTimer = setTimeout(()=>{
-        try{ localStorage.setItem(CART_KEY, JSON.stringify(cart)); }
-        catch(err){ console.warn('Kunne ikke gemme kurv:', err); }
-      },150);
-    }
-
-    function loadCart(){
-      try{
-        const raw = localStorage.getItem(CART_KEY);
-        if(!raw) return;
-        const data = JSON.parse(raw);
-        if(Array.isArray(data)){
-          cart.length = 0;
-          data.forEach(i=>{
-            if(i && i.id && i.name && typeof i.price==='number'){
-              cart.push({ id:String(i.id), name:String(i.name), price:Number(i.price), qty:Math.max(1, Number(i.qty||1)), img:i.img||'' });
-            }
-          });
-        }
-      }catch(err){ console.warn('Kunne ikke indlæse kurv:', err); }
-    }
-
-    function findItem(id){ return cart.find(i=> i.id===id); }
-
-    function addToCart(id,name,price,img){
-      const item = findItem(id);
-      if(item) item.qty += 1; else cart.push({id,name,price,qty:1,img});
+    function addToCart(id, name, price, img) {
+      const existing = cart.find(i => i.id === id);
+      if (existing) existing.qty++;
+      else cart.push({ id, name, price, qty: 1, img });
       renderCart();
       toast(`${name} er lagt i kurven`);
     }
 
-    function removeOne(id){
-      const item = findItem(id); if(!item) return;
-      item.qty -= 1;
-      if(item.qty<=0){ const idx = cart.findIndex(i=>i.id===id); if(idx>=0) cart.splice(idx,1); }
+    function removeOne(id) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+      item.qty--;
+      if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
       renderCart();
     }
 
-    function addOne(id){
-      const item = findItem(id); if(!item) return;
-      item.qty += 1; renderCart();
+    function addOne(id) {
+      const item = cart.find(i => i.id === id);
+      if (item) { item.qty++; renderCart(); }
     }
 
-    function deleteItem(id){
-      const idx = cart.findIndex(i=>i.id===id);
-      if(idx>=0) cart.splice(idx,1);
+    function clearCart() {
+      cart = [];
       renderCart();
     }
 
-    function clearCart(){ cart.length = 0; renderCart(); }
-
-    function renderCart(){
-      // Badges
-      const count = cart.reduce((s,i)=> s+i.qty, 0);
-      ['cart-count','cart-count-header'].forEach(id=>{
-        const el = document.getElementById(id);
-        if(el) el.textContent = count;
-      });
+    function renderCart() {
+      saveCart();
+      const count = cart.reduce((s, i) => s + i.qty, 0);
+      document.getElementById('cart-count').textContent = count;
 
       const empty = document.getElementById('cart-empty');
       const filled = document.getElementById('cart-filled');
-      const rows  = document.getElementById('cart-rows');
+      const rows = document.getElementById('cart-rows');
       const totalEl = document.getElementById('cart-total');
       const mailto = document.getElementById('cart-mailto');
 
-      if(!empty || !filled){ saveCart(); return; }
+      if (!filled) return;
 
-      if(count===0){
+      if (count === 0) {
         empty.classList.remove('hidden');
         filled.classList.add('hidden');
-        saveCart(); return;
-      }else{
-        empty.classList.add('hidden');
-        filled.classList.remove('hidden');
+        return;
       }
+      empty.classList.add('hidden');
+      filled.classList.remove('hidden');
 
       rows.innerHTML = '';
       let total = 0;
-
-      cart.forEach(item=>{
+      cart.forEach(item => {
         total += item.price * item.qty;
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td class="px-4 py-3 text-sm">
-            <div class="flex items-center gap-3">
-              <img src="${item.img}" alt="" class="w-12 h-12 object-cover rounded">
-              <span class="font-medium">${item.name}</span>
-            </div>
-          </td>
-          <td class="px-4 py-3 text-center">
-            <div class="inline-flex items-center gap-2">
-              <button class="px-2 py-1 rounded bg-gray-200 hover:bg-gray-300" onclick="removeOne('${item.id}')">−</button>
-              <span class="w-6 inline-block text-center font-semibold">${item.qty}</span>
-              <button class="px-2 py-1 rounded bg-gray-200 hover:bg-gray-300" onclick="addOne('${item.id}')">+</button>
-            </div>
-          </td>
-          <td class="px-4 py-3 text-right text-sm">${formatDKK(item.price * item.qty)}</td>
-          <td class="px-4 py-3 text-right">
-            <button class="px-3 py-1 rounded bg-red-100 text-red-700 hover:bg-red-200" onclick="deleteItem('${item.id}')">Fjern</button>
-          </td>`;
-        rows.appendChild(tr);
+        rows.innerHTML += `
+          <tr>
+            <td class="px-4 py-3 text-sm">
+              <div class="flex items-center gap-3">
+                <img src="${item.img}" class="w-12 h-12 object-cover rounded">
+                <span>${item.name}</span>
+              </div>
+            </td>
+            <td class="px-4 py-3 text-center">
+              <button onclick="removeOne('${item.id}')" class="px-2">−</button>
+              <span>${item.qty}</span>
+              <button onclick="addOne('${item.id}')" class="px-2">+</button>
+            </td>
+            <td class="px-4 py-3 text-right">${formatDKK(item.price * item.qty)}</td>
+            <td class="px-4 py-3 text-right">
+              <button onclick="removeOne('${item.id}')" class="text-red-600">Fjern</button>
+            </td>
+          </tr>`;
       });
 
-      if(totalEl) totalEl.textContent = formatDKK(total);
-
-      if(mailto){
-        const lines = cart.map(i=>`• ${i.name} × ${i.qty} = ${formatDKK(i.price * i.qty)}`).join('%0A');
-        const body = `Hej Jolanta%0A%0AJeg vil gerne forespørge på følgende:%0A${lines}%0A%0ATotal: ${formatDKK(total)}%0A%0AMvh,%0A[Dit navn]%0A[Telefon]`;
-        mailto.href = `mailto:jolanta.keramik@mail.com?subject=Forespørgsel%20på%20keramik&body=${body}`;
-      }
-
-      saveCart();
+      totalEl.textContent = formatDKK(total);
+      const lines = cart.map(i => `• ${i.name} × ${i.qty} = ${formatDKK(i.price * i.qty)}`).join('%0A');
+      mailto.href = `mailto:jolanta.keramik@mail.com?subject=Bestilling&body=${lines}%0ATotal: ${formatDKK(total)}`;
     }
 
-    function toast(text){
-      const box = document.createElement('
+    function toast(text) {
+      const box = document.createElement('div');
+      box.textContent = text;
+      box.className = 'fixed left-1/2 -translate-x-1/2 bottom-6 z-50 px-4 py-2 rounded bg-black text-white';
+      document.body.appendChild(box);
+      setTimeout(() => box.remove(), 1800);
+    }
+
+    // Init
+    loadCart();
+    renderCart();
+  </script>
+</body>
+</html>
+
